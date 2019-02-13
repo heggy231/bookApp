@@ -35,11 +35,17 @@ Let's create a **character** model that gets embedded in the **book** model!
 
 - make a branch
 > git checkout -b heggy-sprint-1 // creating my own branch
-> git branch
+> git branch // which branch am I on?
 
 https://git.generalassemb.ly/sf-wdi-51/mongoose-book-app/blob/master/docs/sprint1.md
 
 > npm i --save mongoose // install mongoose
-it is buili
+it is building the model 
 
 > touch models/book.js // create new model
+
+> git checkout master // you are back on master
+
+notice some dependencies?
+> npm install // install the dependencies require for the project
+
