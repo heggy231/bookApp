@@ -52,7 +52,10 @@ app.get('/api/books', (req, res) => {
       console.log("Index error: " + err);
       res.sendStatus(500);
     }
-  }
+    // if books are there: respond with json obj with books argument
+    //   send bck to user
+    res.json(books);
+  });
 });
 
 // get one book
