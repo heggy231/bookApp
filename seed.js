@@ -1,9 +1,9 @@
 // This file allows us to seed our application with data
 // simply run: `node seed.js` from the root of this project folder.
+// entire book.js so far
+const db = require('./models');
 
-var db = require('./models');
-
-var books_list = [
+let books_list = [
   {
     title: "To Kill a Mockingbird",
     author: "Harper Lee",
@@ -55,7 +55,9 @@ var books_list = [
 ];
 
 // remove all records that match {} -- which means remove ALL records
+//   this is for testing let's clear all prev data from prev session
 db.Book.deleteMany({}, function(err, books){
+  // first catch err
   if(err) {
     console.log('Error occurred in remove', err);
   } else {
@@ -63,8 +65,12 @@ db.Book.deleteMany({}, function(err, books){
 
     // create new records based on the array books_list
     db.Book.create(books_list, function(err, books){
+      // catch err
       if (err) { return console.log('err', err); }
+      console.log("///////////////////////////////");
       console.log("created", books.length, "books");
+      console.log("///////////////////////////////");
+      // after seed.js runs re want to exit()
       process.exit();
     });
   }
