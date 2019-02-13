@@ -34,19 +34,15 @@ app.use(bodyParser.urlencoded({ extended: true }));
 //  ROUTES
 ///////////////////
 
-
-
-
 // define a root route: localhost:3000/
 app.get('/', function (req, res) {
   res.sendFile('views/index.html' , { root : __dirname});
 });
 
 // get all books
-app.get('/api/books', function (req, res) {
+app.get('/api/books', (req, res) => {
   // send all books as JSON response
-  console.log('books index');
-  res.json(books);
+  
 });
 
 // get one book
