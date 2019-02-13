@@ -40,9 +40,19 @@ app.get('/', function (req, res) {
 });
 
 // get all books
+//  goal: get them all book in .json response
 app.get('/api/books', (req, res) => {
   // send all books as JSON response
-  
+  // first connection of database
+  // send all books as JSON response
+  //   .find() method gets 2 parameters
+  db.Book.find((err, books) => {
+    // if err to catch no books are there
+    if (err) {
+      console.log("Index error: " + err);
+      res.sendStatus(500);
+    }
+  }
 });
 
 // get one book
