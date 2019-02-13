@@ -59,9 +59,26 @@ app.get('/api/books', (req, res) => {
 });
 
 // get one book
+//  google "mongoose method find a single resource" > https://mongoosejs.com/docs/queries.html
+//  Model.findOne(): https://mongoosejs.com/docs/api.html#model_Model.findOne
+//    find one iphone adventures - iphone adventures??
+//    Adventure.findOne({ type: 'iphone' }, function (err, adventure) {});
+//   go to doc https://mongoosejs.com/docs/models.html
+//   
 app.get('/api/books/:id', function (req, res) {
   // find one book by its id
-  db.Book
+  // Adventure.findOne({ type: 'iphone' }, function (err, adventure) {});
+  //  mongoose will give you the '/api/books/:id' :id is clue uuid! default create book :id
+  //  db.Book.findOne({ id: req.params.id }, (err, data) => {}); data is place holder.  data could be anything it is regards to Book
+  //  _id is the format you use for UUID that mongoose saves it under
+  db.Book.findOne({ _id: req.params.id }, (err, data) => {
+    if (err) {
+      console.log("this is not the book you are looking for");
+    }
+    // if we foudn the one book then we return the json obj of data argument
+    res.json(data);
+  });
+
 });
 
 // create new book
