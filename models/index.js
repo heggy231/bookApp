@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 // locally hosted db of mongodb
-mongoose.connect("mongodb://localhost/book-app");
+mongoose.connect("mongodb://localhost/book-app", { useNewUrlParser: true });
 
 // models/index.js
 //   export       then   import         

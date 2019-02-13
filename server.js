@@ -9,7 +9,8 @@
 //require express in our app
 const express = require('express');
 const bodyParser = require('body-parser');
-
+// same as in seed.js for server.js we need interactive in our app
+const db = require('./models');
 // generate a new express app and call it 'app'
 var app = express();
 

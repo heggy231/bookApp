@@ -1,7 +1,6 @@
 // export mongoose
 const mongoose = require('mongoose');
-const Schema = mongoose Schema;
-
+const Schema = mongoose.Schema;
 // mongoose helps you connect with mongoDB datamodel
 const BookSchema = new Schema ({
   title: String,
